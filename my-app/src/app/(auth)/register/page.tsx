@@ -11,13 +11,16 @@ export default function Register() {
     };
     console.log("jalan di page");
 
-    const response = await fetch("http://localhost:3000/api/users/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(user),
-    });
+    const response = await fetch(
+      "https://last-project-blue.vercel.app/api/users/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      }
+    );
 
     console.log(response.ok, "<--- response");
 

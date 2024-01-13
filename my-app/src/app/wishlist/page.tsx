@@ -13,12 +13,15 @@ interface Wishlist {
 
 async function fetchWishData() {
   try {
-    const response = await fetch("http://localhost:3000/api/wishlist/getwish", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "https://last-project-blue.vercel.app/api/wishlist/getwish",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
 
     const result = await response.json();
     return result.data || [];
@@ -30,13 +33,16 @@ async function fetchWishData() {
 
 async function deleteWishlist(id: string) {
   try {
-    const response = await fetch(`http://localhost:3000/api/deletewish`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ id }),
-    });
+    const response = await fetch(
+      `https://last-project-blue.vercel.app/api/deletewish`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id }),
+      }
+    );
 
     if (response.status === 200) {
       const result = await response.json();

@@ -13,12 +13,15 @@ interface ResponseData {
   // other properties if any
 }
 async function getData() {
-  const response = await fetch("http://localhost:3000/api/clothes", {
-    method: "GET", // or 'PUT'
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  const response = await fetch(
+    "https://last-project-blue.vercel.app/api/clothes",
+    {
+      method: "GET", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
   const result = (await response.json()) as ResponseData;
   return result;
 }

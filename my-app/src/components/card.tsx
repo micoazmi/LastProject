@@ -10,17 +10,20 @@ import { useRouter } from "next/navigation";
 export default function Card({ data }: { data: Product }) {
   const router = useRouter();
   async function addWishlist(data: Product) {
-    const response = await fetch("http://localhost:3000/api/wishlist", {
-      method: "POST", // or 'PUT'
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        nama: data.name,
-        bahan: data.bahan,
-        imageUrl: data.imageUrl,
-      }),
-    });
+    const response = await fetch(
+      "https://last-project-blue.vercel.app/api/wishlist",
+      {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nama: data.name,
+          bahan: data.bahan,
+          imageUrl: data.imageUrl,
+        }),
+      }
+    );
     const result = await response.json();
     return result;
   }
