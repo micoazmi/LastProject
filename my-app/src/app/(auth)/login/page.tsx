@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import FlashMessage from "@/components/flashmessage";
 import { useState } from "react";
 interface MyResponse {
   message: string;
