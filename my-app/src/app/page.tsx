@@ -46,26 +46,31 @@ export default async function Home() {
         </Link>
       </div>
       <div className="flex flex-wrap gap-8 justify-center  bg-gradient-to-r from-blue-500 to-purple-500 p-8">
-        {data.map((el: Product) => (
+        {/* {data.map((el: Product) => (
           <div key={el._id} className="bg-white rounded-md p-4 shadow-md">
             <Card data={el}></Card>
           </div>
-        ))}
+        ))} */}
+        <div className="max-w-sm rounded overflow-hidden shadow-lg ml-5">
+          <img className="w-full" alt="Sunset in the mountains" />
+          <div className="px-6 py-4">
+            <div className="font-bold text-xl mb-2">PUma</div>
+            <p className="text-gray-700 text-base">Katun</p>
+          </div>
+          <div className="px-6 py-4 flex gap-4">
+            <div>
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Detail
+              </button>
+            </div>
+            <div>
+              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Add to Wishlist
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      {/* <InfiniteScroll
-        dataLength={data.length} //This is important field to render the next data
-        next={data}
-        hasMore={true}
-        loader={<h4>Loading...</h4>}
-      >
-        {data.map((el: Product) => {
-          return (
-            <>
-              <Card data={el}></Card>
-            </>
-          );
-        })}
-      </InfiniteScroll> */}
     </>
   );
 }
