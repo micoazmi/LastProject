@@ -42,39 +42,6 @@ export async function middleware(request: NextRequest) {
 
 
  
-  // console.log("test");
-  if (request.nextUrl.pathname.startsWith("/products")) {
-    let cookie = request.cookies.get("Authorization");
-    let token = cookie?.value.split(" ")[1];
-    // console.log(cookie);
-
-    if (!token) {
-      return NextResponse.redirect(new URL("/login", request.url));
-    }
-    return NextResponse.next();
-  }
-
-  if (request.nextUrl.pathname.startsWith("/wishlist")) {
-    let cookie = request.cookies.get("Authorization");
-    let token = cookie?.value.split(" ")[1];
-    // console.log(cookie);
-
-    if (!token) {
-      return NextResponse.redirect(new URL("/login", request.url));
-    }
-    return NextResponse.next();
-  }
-
-  if (request.nextUrl.pathname.startsWith("/login")) {
-    let cookie = request.cookies.get("Authorization");
-    let token = cookie?.value.split(" ")[1];
-    // console.log(cookie);
-
-    if (token) {
-      return NextResponse.redirect(new URL("/products", request.url));
-    }
-    return NextResponse.next();
-  }
 
   // const response = NextResponse.next();
   // return response;
